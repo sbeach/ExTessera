@@ -88,8 +88,8 @@ class EditBasicsFragment : Fragment(), EditCharacterView {
             character.race = model.race
             character.subrace = model.subrace
             character.primary.job = model.job
+            if (character.primary.level != model.level || character.exp == 0) character.setExpToLevel()
             character.primary.level = model.level
-            character.setExpToLevel()
             character.proficiencies.deleteAllFromRealm()
             character.setProficiencies()
 
